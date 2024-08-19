@@ -1,12 +1,14 @@
-{
-    "Author": "Shashank Kambhampati",
-    "Name": "GearsetReorder",
-    "Punchline": "Quickly drag and drop gearsets",
-    "Description": "Reorder your gearsets",
-    "ApplicableVersion": "any",
-    "RepoUrl": "https://github.com/shashkambham/GearsetReorder",
-    "DownloadLinkInstall": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
-    "DownloadLinkTesting": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
-    "Tags": []
-}
+[
+    {
+        "Author": "Shashank Kambhampati",
+        "Name": "GearsetReorder",
+        "Punchline": "Quickly drag and drop gearsets",
+        "Description": "Reorder your gearsets",
+        "ApplicableVersion": "any",
+        "RepoUrl": "https://github.com/shashkambham/GearsetReorder",
+        "DownloadLinkInstall": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
+        "DownloadLinkTesting": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
+        "Tags": []
+    }
+]
