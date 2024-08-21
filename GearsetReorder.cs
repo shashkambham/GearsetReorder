@@ -52,7 +52,7 @@ public class GearsetWindow : Window, IDisposable {
         }
         for (var i = 0; i < gearsets.Count; i++) {
              var gearset = gearsetModule->GetGearset(gearsets[i]);
-            ImGui.Button(i + " " + gearset->NameString);
+            ImGui.Button(gearset->NameString);
             if (ImGui.BeginDragDropSource()) {
                 ImGui.Text(gearset->NameString);
                 ImGui.SetDragDropPayload(typeof(string).FullName, IntPtr.Zero, 0);
