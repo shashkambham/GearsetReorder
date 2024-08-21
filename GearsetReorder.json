@@ -9,9 +9,9 @@
         "AssemblyVersion": "1.2.1.1",
         "TestingAssemblyVersion": "1.2.1.1",
         "RepoUrl": "https://github.com/shashkambham/GearsetReorder",
-        "DownloadLinkInstall": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
-        "DownloadLinkTesting": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
-        "DownloadLinkUpdate": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.0/latest.zip",
+        "DownloadLinkInstall": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.1/latest.zip",
+        "DownloadLinkTesting": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.1/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/shashkambham/GearsetReorder/releases/download/v0.1.1/latest.zip",
         "Tags": []
     }
 ]
