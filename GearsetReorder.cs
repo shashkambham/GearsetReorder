@@ -6,6 +6,9 @@ using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using System;
 using ImGuiNET;
 using System.Collections.Generic;
+using Dalamud.Plugin.Services;
+using Dalamud.Game.Gui.Toast;
+using Dalamud.Game.Text.SeStringHandling;
 
 namespace GearsetReorder;
 
@@ -15,8 +18,11 @@ public class Plugin : IDalamudPlugin {
     private GearsetWindow gearsetWindow { get; init; }
     private readonly WindowSystem windowSystem = new("GearsetReorder");
 
+    [PluginService]
+    internal static IToastGui toastGui { get; private set; } = null!;
+
     public Plugin() {
-        gearsetWindow = new GearsetWindow();
+        gearsetWindow = new GearsetWindow(toastGui);
         windowSystem.AddWindow(gearsetWindow);
         PluginInterface.UiBuilder.Draw += DrawUI;
         PluginInterface.UiBuilder.OpenMainUi += OpenMainUi;
@@ -37,7 +43,10 @@ public class Plugin : IDalamudPlugin {
 public class GearsetWindow : Window, IDisposable {
     private int? draggedItemId = null;
 
-    public GearsetWindow(): base("Gearsets") {
+    private IToastGui toastGui;
+
+    public GearsetWindow(IToastGui toastGui): base("Gearsets") {
+        this.toastGui = toastGui;
         Size = new Vector2(232, 700);
     }
 
@@ -78,5 +87,21 @@ public class GearsetWindow : Window, IDisposable {
         }
     }
 
-    public void Dispose() {}
+    public override void OnOpen() {
+        toastGui.Toast += ToastHandler;
+    }
+
+    public override void OnClose() {
+        toastGui.Toast -= ToastHandler;
+    }
+
+    private void ToastHandler(ref SeString message, ref ToastOptions options, ref bool isHandled) {
+        if (message.ToString() == "Gear set number changed.") {
+            isHandled = true;
+        }
+    }
+
+    public void Dispose() {
+        OnClose();
+    }
 }
